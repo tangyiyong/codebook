@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	
+		<meta name="keywords" content="Java, HTML, CSS, XML, XHTML, JavaScript">
+		<meta name="description" content="编程 代码 源码 开源 IT技术 技术笔记 代码笔记">
+		<meta name="author" content="baozebing">
+		<title>新增笔记</title>
+		<link href="${request.contextPath}/static/css/notebook.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="${request.contextPath}/static/img/ws48.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="${request.contextPath}/static/plugin/editormd/css/editormd.css">
+		<script type="text/javascript">
+			var basePath = "${request.contextPath}";
+		</script>
+		<style type="text/css">
+			.cell-s {
+				padding: 10px;
+				font-size: 14px;
+				line-height: 120%;
+				text-align: left;
+			}
+			.input-s {
+				border-radius: 3px;
+				padding: 5px;
+				font-size: 14px;
+				border: 1px solid #ccc;
+				width: 100%;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="hidden" id="id" value="${nodebookid!}">
+		<div class="box">
+			<button class="button button1 save">保存笔记</button>
+		</div>
+		<div id="test-editormd"></div>
+		<div class="hidediv">
+			<div class="box">
+				<li class="cell-s"><input type="text" class="input-s" id="nodename" placeholder="这篇笔记叫什么名字?" /></li>
+				<li class="cell-s">
+				<select class="select" id="group">
+				    <option value="">选择分组</option>
+				</select>
+				</li>
+				<li class="cell-s">
+				<select class="select" id="tag">
+				    <option value="">选择标签</option>
+					<option value="java">Java</option>
+				    <option value="jq">Jquery</option>
+					<option value="js">JavaScript</option>
+					<option value="vue">Vue.js</option>
+					<option value="bug">Bug</option>
+					<option value="kafka">Kafka</option>
+					<option value="mysql">Mysql</option>
+					<option value="redis">Redis</option>
+					<option value="python">Python</option>
+					<option value="xml">XML</option>
+					<option value="json">Json</option>
+					<option value="linux">Linux</option>
+					<option value="springboot">SpringBoot</option>
+					<option value="springcloud">SpringCloud</option>
+					<option value="gp">Gp数据库</option>
+					<option value="algorithm">算法</option>
+					<option value="c">C语言</option>
+					<option value="php">PHP</option>
+					<option value="container">容器</option>
+					
+				</select>
+				</li>
+				<li class="cell-s"><button class="button button1 confirm">确定</button></li>
+			</div>
+		</div>
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/js/editormd.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/layer/layer.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/min/edit.js"></script>
+	</body>
+</html>

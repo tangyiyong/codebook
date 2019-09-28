@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	
+		<meta name="keywords" content="Java, HTML, CSS, XML, XHTML, JavaScript">
+		<meta name="description" content="编程 代码 源码 开源 IT技术 技术笔记 代码笔记">
+		<meta name="author" content="baozebing">
+		<title>tuna技术分享</title>
+		<link rel="shortcut icon" href="${request.contextPath}/static/img/ws48.png" type="image/x-icon" />
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/toastr/toastr.min.css">
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/btdist/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/btdist/dist/css/signin.css">
+		<!-- HTML5 shim和Respond.js用于IE8支持HTML5元素和媒体查询 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		<script type="text/javascript">
+			var basePath = "${request.contextPath}";
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				background: rgb(255, 255, 255);
+				font: 18px "Microsoft YaHei", 微软雅黑, Arial, "Lucida Grande", Tahoma,
+					sans-serif;
+			}
+
+			.footer {
+				color: #c1c1c100;
+				text-decoration: none;
+			}
+			.weibo {
+				color: red;
+			}
+			a{color:black; text-decoration: none;}
+			a:hover{color:black;text-decoration: none;}
+		</style>
+	</head>
+	<body>
+
+		<div class="container" id="c">
+			<div class="form-signin">
+				<a href="${request.contextPath}/">
+					<img width="50px" height="50px" src="data:image/png;base64,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">
+					<h2 class="form-signin-heading">代码笔记</h2>
+				</a>
+				
+				<div class="form-group">
+					<input type="text" placeholder="用户名" class="form-control" autocomplete="off" id="u" autofocus>
+				</div>
+				
+				<div class="form-group">
+					<input type="password" placeholder="密码" class="form-control" id="p">
+				</div>
+				
+				<div class="form-group">
+					<div class="checkbox">
+						<a style="font-size:.9em;" href="${request.contextPath}/login/create">创建账号</a>
+					</div>
+				</div>
+				
+				<button class="btn btn-sm btn-primary btn-block bbt" id="check">登入</button>
+				<button class="btn btn-sm btn-primary btn-block bbt" id="weiboLogin">
+					<i class="fa fa-weibo" aria-hidden="true"></i>用微博账号登入
+				</button>
+			</div>
+		</div>
+		
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+		<script src="${request.contextPath}/static/plugin/toastr/toastr.min.js"></script>
+		<script src="${request.contextPath}/static/plugin/btdist/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/layer/layer.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/min/login.js"></script>
+	</body>
+</html>

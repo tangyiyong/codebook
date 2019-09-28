@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	
+		<meta name="keywords" content="Java, HTML, CSS, XML, XHTML, JavaScript">
+		<meta name="description" content="编程 代码 源码 开源 IT技术 技术笔记 代码笔记">
+		<meta name="author" content="baozebing">
+		<title>笔记内容</title>
+		<link rel="shortcut icon" href="${request.contextPath}/static/img/ws48.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="${request.contextPath}/static/plugin/editormd/css/editormd.preview.min.css">
+		<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var basePath = "${request.contextPath}";
+		  </script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				text-shadow: rgb(234, 234, 234) 0px 1px 0px;
+				background: rgb(255, 255, 255);
+				font: 18px "Microsoft YaHei", 微软雅黑, Arial, "Lucida Grande", Tahoma,
+					sans-serif;
+			}
+			html{
+				height: 100%;
+			}
+			a{
+				color: red;
+				text-decoration: none;
+			}
+			.editormd-preview-container, .editormd-html-preview {
+			    width: auto !important;
+			}
+			.hide{
+				display: none;
+			}
+			.matter{
+				text-align: left;
+			}
+			.cell-s {
+				padding: 10px;
+				font-size: 14px;
+				line-height: 120%;
+				text-align: left;
+				border-bottom: #d9d9d9 1px solid;
+			}
+			.box {
+				/* background-color: var(--box-background-color); */
+				background-color: #fff;
+				border-radius: var(--box-border-radius);
+				box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+				border-bottom: 1px solid #e2e2e2;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="hidden" id="id" value="${nodebookid!}"/>
+		
+		<div class="hide codebook box">
+			<div class="cell-s">
+				<strong id="nodebookname"></strong>
+			</div>
+			<div class="cell-s"><span id="updateTime"></span></div>
+			<div class="cell-s"><wb:like appkey="5TrJ8n" type="simple"></wb:like></div>
+			<div class="cell-s">
+				<div id="nodecontent"></div>
+			</div>
+		</div>
+		
+		<div class="hide matter">
+			<ul id="matter"></ul>
+		</div>
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/prettify.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/marked.min.js"></script>
+		<script src="https://cdn.staticfile.org/raphael/2.3.0/raphael.min.js"></script>
+		<script src="https://cdn.staticfile.org/underscore.js/1.9.1/underscore-min.js"></script>
+		<script src="https://cdn.staticfile.org/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+		<script src=https://cdn.staticfile.org/flowchart/1.12.2/flowchart.min.js></script>
+		<!-- <script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/underscore.min.js"></script>-->
+		<!-- <script type="text/javascript" src="${request.contextPath}/static/plugin/jquery-3.4.1.js"></script> -->
+		<!-- <script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/raphael.min.js"></script> -->
+		<!-- <script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/sequence-diagram.min.js"></script> -->
+		<!-- <script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/flowchart.min.js"></script> -->
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/lib/jquery.flowchart.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/editormd/js/editormd.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/layer/layer.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/min/sharecodebook.js"></script>
+	</body>
+</html>

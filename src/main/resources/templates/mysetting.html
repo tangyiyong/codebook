@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="keywords" content="Java, HTML, CSS, XML, XHTML, JavaScript">
+		<meta name="description" content="编程 代码 源码 开源 IT技术 技术笔记 代码笔记">
+		<meta name="author" content="baozebing">
+		<title>设置</title>
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/ztree/css/boot/bootstrapStyle.css" type="text/css">
+		<link rel="shortcut icon" href="${request.contextPath}/static/img/ws48.png" type="image/x-icon" />
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/toastr/toastr.min.css">
+		<link href="${request.contextPath}/static/css/mysetting.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/btdist/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/btdist/dist/css/starter-template.css">
+		<link href="${request.contextPath}/static/css/nav.css" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9]>
+		  <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <![endif]-->
+		<script type="text/javascript">
+			var basePath = "${request.contextPath}";
+		</script>
+		<style type="text/css">
+			.main {
+				width: auto;
+				margin-top: 10px;
+			}
+
+			.input-group {
+				margin-bottom: 5px;
+			}
+
+			.input-group-addon {
+				background-color: #fff;
+			}
+
+			.panel-default>.panel-heading {
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="container">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+					<img width="24px" height="24px" src="data:image/png;base64,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">
+					个人信息
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="a">TUNA号</label>
+						<input type="text" class="form-control" readonly="readonly" value="${user_.id!}" id="a">
+					</div>
+					<div class="form-group">
+						<label for="b">用户名</label>
+						<input type="text" class="form-control" readonly="readonly" value="${user_.uname!}" id="b">
+					</div>
+					<div class="form-group">
+						<label for="myemail">邮箱</label>
+						<input type="email" class="form-control" id="myemail">
+					</div>
+					<div class="form-group">
+						<label for="myhome">个人网站</label>
+						<input type="text" class="form-control" id="myhome">
+						<span class="tips">正确格式http|ftp|https开头</span>
+					</div>
+					<div class="form-group">
+						<label for="mygitee">Gitee</label>
+						<input type="text" class="form-control" id="mygitee">
+					</div>
+					<div class="form-group">
+						<label for="mygithub">Github</label>
+						<input type="text" class="form-control" id="mygithub">
+					</div>
+					<div class="form-group">
+						<button class="button button1 savestting">保存个人信息</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACrUlEQVRIie2UXUiTURzGn/Pu3buP5l6zVipKXXgh2oUUko1sM0xzEaE2QsG66TYqTKyQeC+6y5YRGdRFlBHYIMiBFuXHJqaZJuVNah8SFYbl1LWZZ9t7ushK3Idr0k30XP6fc57fOYf//wD/9c+LxLKoaG95piCozoIR80Kp0+ujdZ337SMrBuzcs98oKPh28w4jV2DaLgBAh7ObOl29csBPCx613e2L5ZBhJUkSZymtGL95+06ALdGNW80BS2nFW0mSuGgZUc2e/uHNsiynVVhLFUu9ygNlClmW012DL3LiBgQZMYh6kfI8H+LxPA9RL1IEuPVxA5RKMjbldqtnZmZDPPf0DL5MTakBxWjcgAct9lc8zzvPNTTOU+r/VafUj/MXG6kgKDs72ppfR8tYtouKi8tSFFpV1+rExHRT/jYNAHS5Hs9NT8++81G/uavVPrEiAACUlJSoAmRVlaBR7SIMbG6ePkzSoslut9NY9v9VLXsDs9Wq432o5HnFbo5wW0DAZCYPBqm/Q62g1x0Ohy8ugCRJ3JOhkToQdjI1JZnlG/O0+gQdFBwHj9eH/oFnnuKiAttYauGVcTcOceRHFmPwimtwVcomNCKgsNAqqvWqe3q9buupmqPqTVmZEU/Y9BKTQ5MwLK4xhpoGE6kHwrSpJEmcoOMdGRkb865dtkUN/+AFnn+GYa0GOJwNHMwEdEqAEJw55mIpYQHdT4ertFpNrnS6RqXVaiKGA0DrOCAzwLIByEoCcgyAOQ0AkEAIagEg5A8Iyqy9tvqITRT1oeO7RN8CKAeQ6/k9g/AsNC5j+AjEOAeRdKKHrQsGMSpwEI2pAA0CfROAzPAm8BVZlyxkfkUAADjuZNUgqF9cIwz7bCbSAoR5oj/V+09oSEvGAAiUAMCC8F4wk96f/neOPv8MKppuwgAAAABJRU5ErkJggg==">
+					系统设置
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="loginReminder">登入提醒</label>
+						<select class="form-control select" id="loginReminder">
+							<option value="0">不开启</option>
+							<option value="1">开启</option>
+						</select>
+						<span class="tips">(需要在个人信息中设置邮箱)开启后每次登入将会收到邮件通知</span>
+					</div>
+
+					<div class="form-group">
+						<label for="openshare">是否共享笔记</label>
+						<select class="form-control select" id="openshare">
+							<option value="0">否</option>
+							<option value="1">是</option>
+						</select>
+						<span class="tips">共享后别人可以看到你的笔记</span>
+					</div>
+
+					<div class="form-group">
+						<label for="allowdelete">允许删除操作</label>
+						<select class="form-control select" id="allowdelete">
+							<option value="0">不允许</option>
+							<option value="1">允许</option>
+						</select>
+						<span class="tips">允许后你所有的笔记将可以被删除且不可恢复</span>
+					</div>
+					<div class="form-group">
+						<button class="button button1 savesystemstting">保存系统设置</button>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAADTUlEQVRIibWUSUwTYRTH30wXymILXUY70GIbWxFoFYkL0bhEEkCMsSAGAnG/1CpBjfFkwoXowd0iuJyMFkXQxKpBhcSgCSEqJmi1ZQ1FWqaFoS3U0sWOF5daDzIN/o8v7/v9vu8l70MgxjSXlTGQPGpbYnzc0m/B0LjZOtV64uxzb3QfEgvceK5yS2p68hmZBMtls5jIt3AYxuyTQyNfHBcKtQZ9ZC+DLrzlYqk6O1NyT5aGLQtTFEJMuCdZDAZbyOcKBHzu5vw1UvT2497OmAU1VesuKBaL15OuGfJd78BJ03vTvjHS9xJBIEuMpUgFKQvy8ldJ0dtPfkto5cPD6k/enjrq1a2DNyPrzefLUnuatd3enjqKeH3K96yx8ggAAEpXgDKAAwDgDwQdkfVdx+6PDXyZKOkbtr1NSuBw0nBRTX3tpiTaAr8/aAUA4Ccnbr58pCguWtI/5Dg54/WFJLhAjvMW7aQtGJ9wt/gDwZBChq9dnou3RktGCHe3e9rnYqAoxCewMNqCrVqD/r1p+CmKILBSJSuOlqjkor2YgCsIBEOU1zdrpr0HRn25RpUhvSri8xYBAIQpCvqGbF0z074OJhPBpBKshM9bILQM2d4++mjKoyWIhDtJDzE4bH+To5IXxrFZzMg+m4McNfXZ9++oNrTPeQ+M+nKNaml6vUjAEztJD2H6bNUVaO+c2piLT/n9gQTPjA8hXV77qG2i3Tzs1O08ercLYI5fxRN95bZMZeo1TMjDHaSHMFtGDxXpDA/mcpb5r4bHl6uKM5V4THCAH4tWW1uLtpwvO0xFvcioL9dkZaTewIQ83El6CEu/VUcH/kuwemHfpY1rMi523Nzd8FNi1JdrspXp9ZiQK3aSHsLcb9UVapta6cABfnx2W9crLSw2Y0O2QlLcuVoiqShQhbOUaQ1/jOVQE62b/yE4oFFvsDum2lhspjpTISngJnGKMGEy5pz0EJYBqy5WOAAAs+n09pwl8rRG39fZccvgWBuOpahEQh7fOekhzAOxjSUyCAWAtN/Y07hKLT8YCIWoxHgOY77gAAAoAkDN+v1tLrfXNd9wAADUUFeoVsjE9fM5lr/y4nrVFcvT4/a2horSeQVHprlux4r/wf0O256AbjF7Mx0AAAAASUVORK5CYII=">
+					修改密码
+					</h3>
+					<span class="tips">微博用户可无视修改密码功能</span>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="oldpasscode">旧密码</label>
+						<input type="password" class="form-control" id="oldpasscode">
+					</div>
+					<div class="form-group">
+						<label for="newpasscode">新密码</label>
+						<input type="password" class="form-control" id="newpasscode">
+					</div>
+					<div class="form-group">
+						<button class="button button1 updatepasscode">修改密码</button>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">自定义主页背景</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group col-md-4">
+						<a href="javascript:selectedubackground('cloth.png');"><img width="100%" height="80px" src="${request.contextPath}/static/bk/cloth.png"></a>
+					</div>
+					<div class="form-group col-md-4">
+						<a href="javascript:selectedubackground('email-pattern.png');"><img width="100%" height="80px" src="${request.contextPath}/static/bk/email-pattern.png"></a>
+					</div>
+					<div class="form-group col-md-4">
+						<a href="javascript:selectedubackground('prism-s.png');"><img width="100%" height="80px" src="${request.contextPath}/static/bk/prism-s.png"></a>
+					</div>
+					<div class="form-group">
+						<button class="button button1 updatebackground">保存</button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/plugin/layer/layer.js"></script>
+		<script src="${request.contextPath}/static/plugin/toastr/toastr.min.js"></script>
+		<script src="${request.contextPath}/static/plugin/btdist/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${request.contextPath}/static/min/mysetting.js"></script>
+	</body>
+</html>

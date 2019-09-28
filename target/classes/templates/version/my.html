@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="Java, HTML, CSS, XML, XHTML, JavaScript">
+		<meta name="description" content="编程 代码 源码 开源 IT技术 技术笔记 代码笔记">
+		<meta name="author" content="baozebing">
+		<title>代码笔记</title>
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/ztree/css/boot/bootstrapStyle.css" type="text/css">
+		<link rel="shortcut icon" href="${request.contextPath}/static/img/ws48.png" type="image/x-icon" />
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/toastr/toastr.min.css">
+		<link rel="stylesheet" href="${request.contextPath}/static/plugin/btdist/dist/css/bootstrap.min.css">
+		<!-- HTML5 shim和Respond.js用于IE8支持HTML5元素和媒体查询 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		  <script type="text/javascript">
+			var basePath = "${request.contextPath}";
+		</script>
+		 <style type="text/css">
+		 	body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				text-shadow: rgb(234, 234, 234) 0px 1px 0px;
+				background: rgb(255, 255, 255);
+				font: 12px "Microsoft YaHei", 微软雅黑, Arial, "Lucida Grande", Tahoma,
+					sans-serif;
+			}
+			html{
+				height: 100%;
+			}
+			.button {
+			    background-color: #4c54af;
+			    border: none;
+			    width:100%;
+			    color: white;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 4px 2px;
+			    cursor: pointer;
+			}
+			.box {
+			    background-color: var(--box-background-color);
+			    border-radius: var(--box-border-radius);
+			    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+			    border-bottom: 1px solid #e2e2e2;
+				margin-bottom: 10px;
+			}
+			.cell {
+			    padding: 10px;
+			    font-size: 14px;
+			    line-height: 120%;
+			    text-align: left;
+			    border-bottom: #d9d9d9 1px solid;
+			}
+			.main{
+				width: auto;
+				margin-top: 10px;				
+			}
+			.l{
+				float: left;
+				width: 65%;
+				margin-left: 10px;
+				margin-right: 5px;
+			}
+			.dl{float: inherit;}
+			.dr{float: right;}
+			.r{
+				float: right;
+				width: 30%;
+				margin-left: 5px;
+				margin-right: 10px;
+			}
+			a{
+				text-decoration: none;
+				color: #656f6f;
+			}
+			a:hover{
+				color: red;
+			}
+		 </style>
+	</head>
+	<body>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="col-md-12">
+						<div class="box">
+							<div class="cell"><strong>共享笔记</strong></div>
+							<div id="nodebooks"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-md-12">
+						<div  class="box">
+							<div class="cell"><strong>笔记数量排名</strong></div>
+							<div id="nodebooksort"></div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div  class="box">
+							<div class="cell"><strong>科技新闻</strong></div>
+							<table width="100%">
+								<tbody id="newscontent"></tbody>
+							</table>
+							<div><button class="button">刷新</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+			<script src="${request.contextPath}/static/plugin/btdist/dist/js/bootstrap.min.js"></script>
+			<script type="text/javascript">
+			$(document).ready(function(){
+				
+				var page = 0;
+				get(page);
+				getOpenshare();
+				nodebookCount();
+				
+				$(".button").click(function(){
+					page += 1;
+					get(page * 10);
+				});
+				
+				function nodebookCount(){
+					$.ajax({
+						type: "get",
+						url: basePath + '/share/nodebook/count',
+						async: true,
+						contentType: "application/json; charset=utf-8",
+						dataType: "json",
+						success: function(data) {
+							var len = data.length;
+							if(len == 0){
+								$("#nodebooksort").html('<div class="cell">暂无排名记录</div>');
+								return;
+							}
+							for(var i=0; i<len; i++){
+								var i_ = data[i];
+								$("#nodebooksort").append('<div class="cell"><span class="dl">'+i_.name+'</span><span class="dr">'+i_.num+'</span></div>');
+							}
+						} 
+					});
+				}
+				
+				function getOpenshare(){
+					$.ajax({
+						type: "get",
+						url: basePath + '/share/get',
+						async: true,
+						contentType: "application/json; charset=utf-8",
+						dataType: "json",
+						success: function(data) {
+							var len = data.length;
+							if(len == 0){
+								$("#nodebooks").html('<div class="cell">暂无共享笔记</div>');
+								return;
+							}
+							for(var i=0; i<len; i++){
+								var i_ = data[i];
+								$("#nodebooks").append('<div class="cell"><a target="_blank" href="'+basePath+'/share/view/'+i_.id+'">'+i_.time +" "+ i_.nodeBookName+'</a></div>');
+							}
+						} 
+					});
+				}
+				
+				function get(start) {
+					//console.log(start);
+					$("#newscontent").html("请稍等...");
+					$.ajax({
+						type: "get",
+						url: basePath + '/news/get/'+start+'/科技',
+						async: true,
+						contentType: "application/json; charset=utf-8",
+						dataType: "json",
+						success: function(data) {
+							//console.log(data);
+							$("#newscontent").html("");
+							for(var i=0; i<data.length; i++){
+								var i_ = data[i];
+								var html_ = '<tr>'+
+												'<td align="right" width="30%">'+
+													'<img width="120px;" contenteditable="true" height="110px;" src="'+i_.pic+'">'+
+												'</td>'+
+												'<td align="left" width="60%">'+
+													'<strong><a target="_blank" href="'+i_.weburl+'">'+i_.title+'</a></strong>'+
+													'<p>'+i_.time+'</p>'+
+													'<p>'+i_.src+'</p>'+
+												'</td>'+
+											'</tr>';
+								$("#newscontent").append(html_);
+							}
+						} 
+					});
+				}
+			
+			});
+			</script>
+	</body>
+</html>
