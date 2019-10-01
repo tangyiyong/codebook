@@ -9,6 +9,9 @@
 - 2.本站不涉及任何个人隐私的记录和获取，唯一涉及的是邮箱地址。
 - 3.本站承诺绝不向任何一方提供用户邮箱地址。
 
+> 2019/1002 修复了样式问题
+![image](https://raw.githubusercontent.com/baozebing/imgs/master/WX20191002-004739%402x.png)
+
 > 2019/0930 增加摸鱼话题模块
 
 ![image](https://raw.githubusercontent.com/baozebing/imgs/master/1.jpg)
