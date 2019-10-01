@@ -1,6 +1,14 @@
-# tuna
-留存知识，造福他人
-项目地址 https://www.bowseros.cn
+# TUNA
+
+> 价值观：留存知识，造福他人
+
+> 项目地址：https://www.bowseros.cn
+
+> 承诺：
+- 1.本站永久提供服务，推荐大家在此站点讨论和创建技术话题及记录笔记。
+- 2.本站不涉及任何个人隐私的记录和获取，唯一涉及的是邮箱地址。
+- 3.本站承诺绝不向任何一方提供用户邮箱地址。
+
 > 2019/0930 增加摸鱼话题模块
 
 ![image](https://raw.githubusercontent.com/baozebing/imgs/master/1.jpg)
